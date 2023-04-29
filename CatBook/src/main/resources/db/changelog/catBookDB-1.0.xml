@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="custom/dbchangelog-custom.xsd"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <property name="now" value="now()" dbms="mysql"/>
+
+    <changeSet id="FEATURE-1" author="GansaleZz">
+        <comment>Add 'CB_User' table.</comment>
+        <ext:customCreateTable tableName="CB_User">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="UserName" type="varchar(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Login" type="varchar(16)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Password" type="varchar(16)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <insert tableName="CB_User">
+            <column name="ID" valueNumeric="-1"/>
+            <column name="UserName" value="SystemUser"/>
+            <column name="Login" value="System"/>
+            <column name="Password" value="System"/>
+        </insert>
+
+        <comment>Add 'CB_UserRole' table.</comment>
+        <ext:customCreateTable tableName="CB_UserRole">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="UserRoleName" type="varchar(32)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <insert tableName="CB_UserRole">
+            <column name="ID" valueNumeric="1"/>
+            <column name="UserRoleName" value="ADMIN"/>
+        </insert>
+
+        <insert tableName="CB_UserRole">
+            <column name="ID" valueNumeric="2"/>
+            <column name="UserRoleName" value="CONFIG"/>
+        </insert>
+
+        <insert tableName="CB_UserRole">
+            <column name="ID" valueNumeric="3"/>
+            <column name="UserRoleName" value="CLIENT"/>
+        </insert>
+
+        <comment>Add 'CB_UserRoleMap' table.</comment>
+        <ext:customCreateTable tableName="CB_UserRoleMap">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="UserID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_UserRoleMap_3" references="CB_User(ID)"/>
+            </column>
+            <column name="UserRoleID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_UserRoleMap_4" references="CB_UserRole(ID)"/>
+            </column>
+        </ext:customCreateTable>
+
+        <comment>Add 'CB_BookType' table.</comment>
+        <ext:customCreateTable tableName="CB_BookType">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BookTypeName" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <insert tableName="CB_BookType">
+            <column name="ID" valueNumeric="1"/>
+            <column name="BookTypeName" value="PRINTED"/>
+        </insert>
+
+        <insert tableName="CB_BookType">
+            <column name="ID" valueNumeric="2"/>
+            <column name="BookTypeName" value="AUDIO"/>
+        </insert>
+
+        <comment>Add 'CB_Book' table.</comment>
+        <ext:customCreateTable tableName="CB_Book">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="BookName" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BookTypeID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_Book_3" references="CB_BookType(ID)"/>
+            </column>
+        </ext:customCreateTable>
+
+        <comment>Add 'CB_BookUserMap' table.</comment>
+        <ext:customCreateTable tableName="CB_BookUserMap">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="UserID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_BookUserMap_3" references="CB_User(ID)"/>
+            </column>
+            <column name="BookID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_BookUserMap_4" references="CB_Book(ID)"/>
+            </column>
+        </ext:customCreateTable>
+    </changeSet>
+</databaseChangeLog>
