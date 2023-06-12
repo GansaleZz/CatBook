@@ -1,6 +1,6 @@
 package catBook.main.hibernate;
 
-import catBook.main.bean.Book;
+import catBook.main.bean.book.Book;
 import catBook.main.hibernate.DAO.book.DefaultBookDAO;
 import catBook.config.TestHibernateConfig;
 import catBook.main.hibernate.DAO.book.DefaultBookTypeDAO;

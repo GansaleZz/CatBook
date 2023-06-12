@@ -1,6 +1,6 @@
 package catBook.main.manager.user;
 
-import catBook.main.bean.UserRoleMap;
+import catBook.main.bean.user.UserRoleMap;
 import genesis.manager.GenesisManager;
 
 /**

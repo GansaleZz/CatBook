@@ -2,8 +2,8 @@ package catBook.api.service.book;
 
 import catBook.api.DTO.book.BookUserMapRequestDTO;
 import catBook.api.DTO.book.BookUserMapResponseDTO;
-import catBook.api.transformer.container.BookUserMapParametersContainer;
-import catBook.main.bean.BookUserMap;
+import catBook.api.transformer.book.container.BookUserMapParametersContainer;
+import catBook.main.bean.book.BookUserMap;
 import genesis.api.BaseCreateService;
 import genesis.api.BaseReadService;
 import org.springframework.stereotype.Service;

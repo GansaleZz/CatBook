@@ -1,6 +1,6 @@
 package catBook.main.hibernate.criteria.user;
 
-import catBook.main.bean.UserRole;
+import catBook.main.bean.user.UserRole;
 import genesis.hibernate.criteria.Criteria;
 import genesis.hibernate.criteria.GenesisHibernateQueryCriteria;
 import lombok.Getter;

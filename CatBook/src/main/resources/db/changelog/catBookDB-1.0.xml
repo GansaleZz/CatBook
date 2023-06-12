@@ -115,4 +115,86 @@
             </column>
         </ext:customCreateTable>
     </changeSet>
+
+    <changeSet id="FEATURE-3" author="UC283095">
+        <comment>Add 'CB_NotificationType', 'CB_NotificationStatus', 'CB_Notification' and 'CB_NotificationUserMap' tables.</comment>
+        <ext:customCreateTable tableName="CB_NotificationType">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NotificationTypeName" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <ext:customCreateTable tableName="CB_NotificationStatus">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NotificationStatusName" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <ext:customCreateTable tableName="CB_Locale">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="LocaleName" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LocaleValue" type="varchar(100)">
+                <constraints nullable="false"/>
+            </column>
+
+        </ext:customCreateTable>
+
+        <ext:customCreateTable tableName="CB_Token">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="TokenName" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TokenValue" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </ext:customCreateTable>
+
+        <ext:customCreateTable tableName="CB_NotificationMessage">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NotificationMessageValue" type="varchar(max)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LocaleID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_NotificationMessage3" references="CB_Locale(ID)"/>
+            </column>
+            <column name="NotificationTypeID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_NotificationMessage4" references="CB_NotificationType(ID)"/>
+            </column>
+        </ext:customCreateTable>
+
+        <ext:customCreateTable tableName="CB_Notification">
+            <column name="ID" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="NotificationTypeID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_Notification3" references="CB_NotificationType(ID)"/>
+            </column>
+            <column name="NotificationStatusID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_Notification4" references="CB_NotificationStatus(ID)"/>
+            </column>
+            <column name="UserID" type="bigint">
+                <constraints nullable="false" foreignKeyName="fk_CB_Notification5" references="CB_User(ID)"/>
+            </column>
+        </ext:customCreateTable>
+
+        <insert tableName="CB_Token">
+            <column name="ID" valueNumeric="1"/>
+            <column name="TokenName" value="Current User"/>
+            <column name="TokenValue" value="[[Current User]]"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

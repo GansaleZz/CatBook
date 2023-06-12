@@ -1,9 +1,9 @@
 package catBook.main.controller;
 
-import catBook.main.bean.Book;
-import catBook.main.bean.BookType;
-import catBook.main.bean.BookUserMap;
-import catBook.main.bean.User;
+import catBook.main.bean.book.Book;
+import catBook.main.bean.book.BookType;
+import catBook.main.bean.book.BookUserMap;
+import catBook.main.bean.user.User;
 import catBook.main.manager.book.BookManager;
 import catBook.main.manager.book.BookTypeManager;
 import catBook.main.manager.book.BookUserMapManager;

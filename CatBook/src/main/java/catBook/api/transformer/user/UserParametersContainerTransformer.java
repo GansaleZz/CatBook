@@ -1,6 +1,6 @@
 package catBook.api.transformer.user;
 
-import catBook.api.transformer.container.UserParametersContainer;
+import catBook.api.transformer.user.container.UserParametersContainer;
 import catBook.main.hibernate.criteria.user.UserHibernateQueryCriteria;
 import genesis.api.BaseParametersContainerTransformer;
 import org.mapstruct.Mapper;

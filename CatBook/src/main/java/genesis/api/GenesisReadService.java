@@ -30,7 +30,7 @@ public abstract class GenesisReadService<T extends GenesisResponseDTO, K extends
     protected GenesisManager<K> genesisManager;
 
     @Autowired(required = false)
-    protected BaseResponseTransformerDTO<T, K> baseResponseTransformerDTO;
+    protected BaseResponseDTOTransformer<T, K> baseResponseDTOTransformer;
 
     @Autowired(required = false)
     protected BaseParametersContainerTransformer<S, L> baseParametersContainerTransformer;
@@ -40,7 +40,7 @@ public abstract class GenesisReadService<T extends GenesisResponseDTO, K extends
 
     @Override
     public EntityModel<T> findByID(long ID) {
-        return EntityModel.of(baseResponseTransformerDTO.transformEntityToResponseDTO(genesisManager.findByID(ID)));
+        return EntityModel.of(baseResponseDTOTransformer.transformEntityToResponseDTO(genesisManager.findByID(ID)));
     }
 
     @Override
@@ -53,7 +53,7 @@ public abstract class GenesisReadService<T extends GenesisResponseDTO, K extends
                 .build(true)
                 .toString());
 
-        CollectionModel<EntityModel<T>> result = CollectionModel.of(baseResponseTransformerDTO.transformEntitiesToResponseDTOs(genesisManager.findAll(
+        CollectionModel<EntityModel<T>> result = CollectionModel.of(baseResponseDTOTransformer.transformEntitiesToResponseDTOs(genesisManager.findAll(
                                 PageRequest.of(pageFilter.getPage(), pageFilter.getItems()),
                                 baseParametersContainerTransformer.transformParametersContainerToHibernateQueryCriteria(container)))
                         .stream()

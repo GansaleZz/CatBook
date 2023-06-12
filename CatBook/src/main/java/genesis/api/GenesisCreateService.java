@@ -13,7 +13,7 @@ public abstract class GenesisCreateService<T extends GenesisResponseDTO, K exten
         extends GenesisReadService<T, S, L, M> implements BaseCreateService<T, K> {
 
     @Autowired(required = false)
-    private BaseRequestResponseTransformerDTO<T, K, S> baseRequestTransformerDTO;
+    private BaseRequestResponseDTOTransformer<T, K, S> baseRequestTransformerDTO;
 
     @Override
     public T save(K k) {

@@ -55,7 +55,7 @@ public class PageEntityLinkHelper {
     /**
      * Sets pagination parameters as map values.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @return resulting map.
      */
     public MultiValueMap<String, String> getPageFilterParameters(PageFilter pageFilter) {
@@ -70,7 +70,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on next page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on next page if current page is not last.
      */
@@ -81,7 +81,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on previous page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on previous page if current page is not first.
      */
@@ -92,7 +92,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on first page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on first page if current page is not first.
      */
@@ -103,7 +103,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on last page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on last page if current page is not last.
      */

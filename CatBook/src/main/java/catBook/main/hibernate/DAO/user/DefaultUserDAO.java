@@ -1,6 +1,6 @@
 package catBook.main.hibernate.DAO.user;
 
-import catBook.main.bean.User;
+import catBook.main.bean.user.User;
 import genesis.hibernate.DAO.GenesisHibernateBeanDAO;
 import org.springframework.stereotype.Repository;
 
