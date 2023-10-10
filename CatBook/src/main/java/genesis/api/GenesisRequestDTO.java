@@ -12,5 +12,5 @@ import lombok.Setter;
 @Setter
 public abstract class GenesisRequestDTO {
 
-    private boolean active;
+    private boolean active = true;
 }

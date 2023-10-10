@@ -17,6 +17,8 @@ public class BookUserMapResponseDTO extends GenesisResponseDTO {
 
     private UserResponseDTO user;
 
+    private BookTypeResponseDTO bookType;
+
     @Override
     protected Class<? extends BaseReadService<? extends GenesisResponseDTO,
             ? extends GenesisBean,

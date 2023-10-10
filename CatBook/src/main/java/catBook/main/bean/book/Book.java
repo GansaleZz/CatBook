@@ -29,8 +29,4 @@ public class Book extends GenesisBean {
 
     @Column(name = "BookName")
     private String bookName;
-
-    @ManyToOne
-    @JoinColumn(name = "BookTypeID", referencedColumnName = "ID")
-    private BookType bookType;
 }

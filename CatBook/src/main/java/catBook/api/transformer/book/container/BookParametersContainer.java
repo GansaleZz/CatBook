@@ -9,7 +9,5 @@ import lombok.Setter;
 @Setter
 public class BookParametersContainer extends GenesisParametersContainer {
 
-    private long bookTypeID = GenesisConstants.EMPTY_LONG;
-
     private String bookName;
 }

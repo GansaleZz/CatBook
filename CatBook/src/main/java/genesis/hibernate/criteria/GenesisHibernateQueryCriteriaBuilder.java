@@ -131,7 +131,7 @@ public class GenesisHibernateQueryCriteriaBuilder {
             throws IllegalAccessException {
         return (field.getType() == Long.class && !field.get(criteria).equals(GenesisConstants.EMPTY_LONG)) ||
                 (field.getType() == String.class && field.get(criteria) != null) ||
-                (field.getType() == LocalDateTime.class && !field.get(criteria).equals(GenesisConstants.DATE_MAX)) ||
+                (field.getType() == LocalDateTime.class && !field.get(criteria).equals(GenesisConstants.EMPTY_DATE)) ||
                 (field.getType() == Boolean.class && field.get(criteria) != null);
     }
 }

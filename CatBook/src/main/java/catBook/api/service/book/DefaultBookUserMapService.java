@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class DefaultBookUserMapService
-        extends GenesisCreateService<BookUserMapResponseDTO, BookUserMapRequestDTO, BookUserMap, BookUserMapParametersContainer, BookUserMapHibernateQueryCriteria>
-        implements BookUserMapService {
+        extends GenesisCreateService<BookUserMapResponseDTO, BookUserMapRequestDTO, BookUserMap,
+        BookUserMapParametersContainer, BookUserMapHibernateQueryCriteria> implements BookUserMapService {
 }

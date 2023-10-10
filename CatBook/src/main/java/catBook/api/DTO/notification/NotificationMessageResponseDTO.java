@@ -15,7 +15,7 @@ public class NotificationMessageResponseDTO extends GenesisResponseDTO {
 
     private String notificationMessageValue;
 
-    private NotificationTypeResponseDTO notificationType;
+    private NotificationSubTypeResponseDTO notificationSubType;
 
     private LocaleResponseDTO locale;
 

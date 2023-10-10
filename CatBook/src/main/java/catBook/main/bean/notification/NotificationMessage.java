@@ -32,6 +32,6 @@ public class NotificationMessage extends GenesisBean {
     private Locale locale;
 
     @ManyToOne
-    @JoinColumn(name = "NotificationTypeID", referencedColumnName = "ID")
-    private NotificationType notificationType;
+    @JoinColumn(name = "NotificationSubTypeID", referencedColumnName = "ID")
+    private NotificationType notificationSubType;
 }

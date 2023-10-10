@@ -13,11 +13,13 @@ import lombok.Setter;
 @Setter
 public class NotificationResponseDTO extends GenesisResponseDTO {
 
-    private NotificationTypeResponseDTO notificationType;
+    private NotificationSubTypeResponseDTO notificationSubType;
 
     private NotificationStatusResponseDTO notificationStatus;
 
     private UserResponseDTO user;
+
+    private NotificationMessageResponseDTO notificationMessage;
 
     @Override
     protected Class<? extends BaseReadService<? extends GenesisResponseDTO,

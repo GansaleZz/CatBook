@@ -34,4 +34,8 @@ public class BookUserMap extends GenesisBean {
     @ManyToOne
     @JoinColumn(name = "BookID", referencedColumnName = "ID")
     private Book book;
+
+    @ManyToOne
+    @JoinColumn(name = "BookTypeID", referencedColumnName = "ID")
+    private BookType bookType;
 }

@@ -7,9 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Contains data of entity User.
@@ -28,8 +27,8 @@ public class User extends GenesisBean {
     @Column(name = "UserName")
     private String userName;
 
-    @Column(name = "Login")
-    private String login;
+    @Column(name = "DisplayName")
+    private String displayName;
 
     @Column(name = "Password")
     private String password;

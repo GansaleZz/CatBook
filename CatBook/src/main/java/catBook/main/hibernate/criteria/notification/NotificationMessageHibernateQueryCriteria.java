@@ -22,6 +22,6 @@ public class NotificationMessageHibernateQueryCriteria extends GenesisHibernateQ
     @Criteria(name = "locale")
     private Long localeID = GenesisConstants.EMPTY_LONG;
 
-    @Criteria(name = "notificationType")
-    private Long notificationTypeID = GenesisConstants.EMPTY_LONG;
+    @Criteria(name = "notificationSubType")
+    private Long notificationSubTypeID = GenesisConstants.EMPTY_LONG;
 }

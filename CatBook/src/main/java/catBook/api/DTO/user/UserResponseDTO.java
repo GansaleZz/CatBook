@@ -14,7 +14,7 @@ public class UserResponseDTO extends GenesisResponseDTO {
 
     private String userName;
 
-    private String login;
+    private String displayName;
 
     @Override
     protected Class<? extends BaseReadService<? extends GenesisResponseDTO,

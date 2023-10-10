@@ -14,8 +14,6 @@ public class BookResponseDTO extends GenesisResponseDTO {
 
     private String bookName;
 
-    private BookTypeResponseDTO bookType;
-
     @Override
     protected Class<? extends BaseReadService<? extends GenesisResponseDTO,
             ? extends GenesisBean,

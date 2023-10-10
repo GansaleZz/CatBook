@@ -16,8 +16,8 @@ public class NotificationHibernateQueryCriteria extends GenesisHibernateQueryCri
         return Notification.class;
     }
 
-    @Criteria(name = "notificationType")
-    private Long notificationTypeID = GenesisConstants.EMPTY_LONG;
+    @Criteria(name = "notificationSubType")
+    private Long notificationSubTypeID = GenesisConstants.EMPTY_LONG;
 
     @Criteria(name = "notificationStatus")
     private Long notificationStatusID = GenesisConstants.EMPTY_LONG;

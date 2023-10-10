@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 public class UserRequestDTO extends GenesisRequestDTO {
 
-    private String login;
+    private String displayName;
 
     private String userName;
 

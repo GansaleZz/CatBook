@@ -9,6 +9,4 @@ import lombok.Setter;
 public class BookRequestDTO extends GenesisRequestDTO {
 
     private String bookName;
-
-    private long bookTypeID;
 }

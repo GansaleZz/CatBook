@@ -11,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface BaseCreateService<T extends GenesisResponseDTO, K extends GenesisRequestDTO> {
 
-    @PostMapping("/")
+    @PostMapping({"/", ""})
     T save(@RequestBody K k);
 
-    @DeleteMapping("/")
+    @DeleteMapping({"/", ""})
     T remove(K k);
+
+    void beforeSave(K k);
+
+    void afterSave(K k);
 }

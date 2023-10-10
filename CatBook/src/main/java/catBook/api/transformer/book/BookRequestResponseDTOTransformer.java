@@ -12,15 +12,4 @@ import org.mapstruct.Named;
 @Mapper(componentModel = "spring")
 public interface BookRequestResponseDTOTransformer extends BaseRequestResponseDTOTransformer<BookResponseDTO, BookRequestDTO, Book> {
 
-    @Override
-    @Mapping(source = "bookTypeID", target = "bookType", qualifiedByName = "bookTypeIDToBookTypeTransformer")
-    Book transformRequestDTOToEntity(BookRequestDTO bookRequestDTO);
-
-    @Named("bookTypeIDToBookTypeTransformer")
-    static BookType bookTypeIDToBookType(long bookTypeID) {
-        BookType bookType = new BookType();
-        bookType.setID(bookTypeID);
-
-        return bookType;
-    }
 }

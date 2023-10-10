@@ -12,6 +12,7 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
  *
  * @author GansaleZz
  */
+@PreAuthorize("hasClientRole()")
 public abstract class GenesisReadService<T extends GenesisResponseDTO, K extends GenesisBean, S extends GenesisParametersContainer, L extends GenesisHibernateQueryCriteria<K>>
         implements BaseReadService<T, K, S> {
 

@@ -8,7 +8,9 @@ import lombok.Setter;
 @Setter
 public class BookUserMapRequestDTO extends GenesisRequestDTO {
 
-    private long bookID;
+    private Long bookID;
 
-    private long userID;
+    private Long userID;
+
+    private Long bookTypeID;
 }

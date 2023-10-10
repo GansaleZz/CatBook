@@ -10,5 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Service
 @RequestMapping("/notificationMessages")
-public interface NotificationMessageService extends BaseReadService<NotificationMessageResponseDTO, NotificationMessage, NotificationMessageParametersContainer> {
+public interface NotificationMessageService extends BaseReadService<NotificationMessageResponseDTO, NotificationMessage,
+        NotificationMessageParametersContainer> {
 }

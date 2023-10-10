@@ -13,5 +13,5 @@ public class NotificationMessageParametersContainer extends GenesisParametersCon
 
     private long localeID = GenesisConstants.EMPTY_LONG;
 
-    private long notificationTypeID = GenesisConstants.EMPTY_LONG;
+    private long notificationSubTypeID = GenesisConstants.EMPTY_LONG;
 }

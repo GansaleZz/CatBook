@@ -198,7 +198,7 @@ public class PageEntityLinkHelper {
             throws IllegalAccessException {
         return (field.getType() == Long.class && !field.get(container).equals(GenesisConstants.EMPTY_LONG)) ||
                 (field.getType() == String.class && field.get(container) != null) ||
-                (field.getType() == LocalDateTime.class && !field.get(container).equals(GenesisConstants.DATE_MAX)) ||
+                (field.getType() == LocalDateTime.class && !field.get(container).equals(GenesisConstants.EMPTY_DATE)) ||
                 (field.getType() == Boolean.class && field.get(container) != null);
     }
 }
