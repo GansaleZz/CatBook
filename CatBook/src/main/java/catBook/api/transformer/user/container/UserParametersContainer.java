@@ -10,5 +10,5 @@ public class UserParametersContainer extends GenesisParametersContainer {
 
     private String userName;
 
-    private String login;
+    private String displayName;
 }

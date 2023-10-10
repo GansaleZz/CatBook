@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TokenDAO extends BaseBeanDAO<Token> {
+
+    Token findByTokenValue(String tokenValue);
 }

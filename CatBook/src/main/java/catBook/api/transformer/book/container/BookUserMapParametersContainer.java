@@ -12,4 +12,6 @@ public class BookUserMapParametersContainer extends GenesisParametersContainer {
     private long bookID = GenesisConstants.EMPTY_LONG;
 
     private long userID = GenesisConstants.EMPTY_LONG;
+
+    private long bookTypeID = GenesisConstants.EMPTY_LONG;
 }

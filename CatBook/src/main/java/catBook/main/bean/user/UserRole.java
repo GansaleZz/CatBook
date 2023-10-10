@@ -27,4 +27,7 @@ public class UserRole extends GenesisBean {
 
     @Column(name = "UserRoleName")
     private String userRoleName;
+
+    @Column(name = "Value")
+    private Integer value;
 }

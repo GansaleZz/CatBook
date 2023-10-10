@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDAO extends BaseBeanDAO<User> {
 
+    User findByUserNameAndActive(String userName, boolean active);
 }

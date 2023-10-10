@@ -18,6 +18,6 @@ public class UserHibernateQueryCriteria extends GenesisHibernateQueryCriteria<Us
     @Criteria(name = "userName")
     private String userName;
 
-    @Criteria(name = "login")
-    private String login;
+    @Criteria(name = "displayName")
+    private String displayName;
 }

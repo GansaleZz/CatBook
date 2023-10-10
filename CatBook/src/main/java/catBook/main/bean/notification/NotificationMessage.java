@@ -8,7 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Contains data of entity Notification Message.
@@ -32,6 +36,6 @@ public class NotificationMessage extends GenesisBean {
     private Locale locale;
 
     @ManyToOne
-    @JoinColumn(name = "NotificationTypeID", referencedColumnName = "ID")
-    private NotificationType notificationType;
+    @JoinColumn(name = "NotificationSubTypeID", referencedColumnName = "ID")
+    private NotificationSubType notificationSubType;
 }

@@ -5,17 +5,13 @@ import genesis.bean.GenesisBean;
 import java.util.List;
 
 /**
- * Methods for map EntityResponseDTO to Entity or vise versa.
+ * Methods for map {@link GenesisResponseDTO} to {@link GenesisBean} or vise versa.
  *
  * @author GansaleZz
  */
 public interface BaseResponseDTOTransformer<T extends GenesisResponseDTO, K extends GenesisBean> {
 
-    T transformEntityToResponseDTO(K k);
+    T transformToResponseDTO(K k);
 
-    List<T> transformEntitiesToResponseDTOs(List<K> list);
-
-    K transformResponseDTOToEntity(T t);
-
-    List<K> transformResponseDTOsToEntities(List<T> list);
+    List<T> transformToResponseDTOs(List<K> list);
 }

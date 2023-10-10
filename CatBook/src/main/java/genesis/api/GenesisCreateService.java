@@ -1,31 +1,47 @@
 package genesis.api;
 
 import genesis.bean.GenesisBean;
-import genesis.hibernate.criteria.GenesisHibernateQueryCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
  * Default implementation of {@link BaseCreateService}.
  *
  * @author GansaleZz
  */
-public abstract class GenesisCreateService<T extends GenesisResponseDTO, K extends GenesisRequestDTO, S extends GenesisBean, L extends GenesisParametersContainer, M extends GenesisHibernateQueryCriteria<S>>
-        extends GenesisReadService<T, S, L, M> implements BaseCreateService<T, K> {
+@PreAuthorize("hasClientRole()")
+public abstract class GenesisCreateService<T extends GenesisResponseDTO, K extends GenesisBean, S extends GenesisRequestDTO>
+        extends GenesisReadService<T, K> implements BaseCreateService<T, K, S> {
 
-    @Autowired(required = false)
-    private BaseRequestResponseDTOTransformer<T, K, S> baseRequestTransformerDTO;
+    @Autowired
+    private GenesisServiceValidator<S> validator;
 
     @Override
-    public T save(K k) {
-        S s = baseRequestTransformerDTO.transformRequestDTOToEntity(k);
+    public T save(S s) {
+        beforeSave(s);
 
-        return baseRequestTransformerDTO.transformEntityToResponseDTO(genesisManager.save(s));
+        K k = doSave(s);
+
+        return transformer.transformToResponseDTO(k);
+    }
+
+    protected K doSave(S s) {
+        throw new RuntimeException("Save service method is not implemented!");
     }
 
     @Override
-    public T remove(K k) {
-        S s = baseRequestTransformerDTO.transformRequestDTOToEntity(k);
+    public T remove(S s) {
 
-        return baseRequestTransformerDTO.transformEntityToResponseDTO(genesisManager.remove(s));
+        K k = doRemove(s);
+
+        return transformer.transformToResponseDTO(k);
+    }
+
+    protected K doRemove(S s) {
+        throw new RuntimeException("Remove service method is not implemented!");
+    }
+
+    public void beforeSave(S s) {
+        validator.validate(s);
     }
 }

@@ -8,9 +8,9 @@ import lombok.Setter;
 @Setter
 public class NotificationRequestDTO extends GenesisRequestDTO {
 
-    private long notificationTypeID;
+    private Long notificationSubTypeID;
 
-    private long notificationStatusID;
+    private Long notificationStatusID;
 
-    private long userID;
+    private Long userID;
 }

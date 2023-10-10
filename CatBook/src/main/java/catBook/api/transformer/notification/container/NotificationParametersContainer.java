@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class NotificationParametersContainer extends GenesisParametersContainer {
 
-    private long notificationTypeID = GenesisConstants.EMPTY_LONG;
+    private long notificationSubTypeID = GenesisConstants.EMPTY_LONG;
 
     private long notificationStatusID = GenesisConstants.EMPTY_LONG;
 

@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LocaleDAO extends BaseBeanDAO<Locale> {
+
+    Locale findByLocaleName(String localeName);
 }

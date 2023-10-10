@@ -28,8 +28,8 @@ import javax.persistence.Table;
 public class Notification extends GenesisBean {
 
     @ManyToOne
-    @JoinColumn(name = "NotificationTypeID", referencedColumnName = "ID")
-    private NotificationType notificationType;
+    @JoinColumn(name = "NotificationSubTypeID", referencedColumnName = "ID")
+    private NotificationSubType notificationSubType;
 
     @ManyToOne
     @JoinColumn(name = "NotificationStatusID", referencedColumnName = "ID")

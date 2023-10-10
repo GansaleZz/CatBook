@@ -1,5 +1,6 @@
 package genesis.api;
 
+import genesis.bean.GenesisBean;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,11 +10,14 @@ import org.springframework.web.bind.annotation.RequestBody;
  *
  * @author GansaleZz
  */
-public interface BaseCreateService<T extends GenesisResponseDTO, K extends GenesisRequestDTO> {
+public interface BaseCreateService<T extends GenesisResponseDTO, K extends GenesisBean, S extends GenesisRequestDTO>
+        extends BaseReadService<T, K> {
 
-    @PostMapping("/")
-    T save(@RequestBody K k);
+    @PostMapping({"/", ""})
+    T save(@RequestBody S s);
 
-    @DeleteMapping("/")
-    T remove(K k);
+    @DeleteMapping({"/", ""})
+    T remove(S s);
+
+    void beforeSave(S s);
 }

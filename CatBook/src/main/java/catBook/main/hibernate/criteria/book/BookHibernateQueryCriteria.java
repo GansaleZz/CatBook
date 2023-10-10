@@ -18,7 +18,4 @@ public class BookHibernateQueryCriteria extends GenesisHibernateQueryCriteria<Bo
 
     @Criteria(name = "bookName")
     private String bookName = null;
-
-    @Criteria(name = "bookType")
-    private Long bookTypeID = GenesisConstants.EMPTY_LONG;
 }
