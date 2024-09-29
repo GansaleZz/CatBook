@@ -1,6 +1,6 @@
 package catBook.main.hibernate.DAO.book;
 
-import catBook.main.bean.BookType;
+import catBook.main.bean.book.BookType;
 import genesis.hibernate.DAO.BaseBeanDAO;
 import org.springframework.stereotype.Repository;
 

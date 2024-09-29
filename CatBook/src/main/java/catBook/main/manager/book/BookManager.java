@@ -1,6 +1,6 @@
 package catBook.main.manager.book;
 
-import catBook.main.bean.Book;
+import catBook.main.bean.book.Book;
 import genesis.manager.GenesisManager;
 
 

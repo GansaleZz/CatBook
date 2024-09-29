@@ -1,6 +1,6 @@
 package catBook.main.hibernate.criteria.book;
 
-import catBook.main.bean.Book;
+import catBook.main.bean.book.Book;
 import genesis.hibernate.criteria.Criteria;
 import genesis.hibernate.criteria.GenesisHibernateQueryCriteria;
 import genesis.util.constant.GenesisConstants;
@@ -18,7 +18,4 @@ public class BookHibernateQueryCriteria extends GenesisHibernateQueryCriteria<Bo
 
     @Criteria(name = "bookName")
     private String bookName = null;
-
-    @Criteria(name = "bookType")
-    private Long bookTypeID = GenesisConstants.EMPTY_LONG;
 }

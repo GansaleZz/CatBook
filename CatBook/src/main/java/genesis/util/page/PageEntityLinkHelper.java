@@ -55,7 +55,7 @@ public class PageEntityLinkHelper {
     /**
      * Sets pagination parameters as map values.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @return resulting map.
      */
     public MultiValueMap<String, String> getPageFilterParameters(PageFilter pageFilter) {
@@ -70,7 +70,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on next page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on next page if current page is not last.
      */
@@ -81,7 +81,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on previous page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on previous page if current page is not first.
      */
@@ -92,7 +92,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on first page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on first page if current page is not first.
      */
@@ -103,7 +103,7 @@ public class PageEntityLinkHelper {
     /**
      * Creates link on last page.
      *
-     * @param pageFilter object which contains information about pagination.
+     * @param pageFilter object which contains information of pagination.
      * @param link to getting list of entities.
      * @return link on last page if current page is not last.
      */
@@ -139,7 +139,7 @@ public class PageEntityLinkHelper {
     }
 
     private Optional<PageFilter> provideFirstPage(PageFilter pageFilter) {
-        if (pageFilter.getPage() !=0) {
+        if (pageFilter.getPage() != 0) {
             return Optional.of(PageFilter.builder()
                     .page(0)
                     .items(pageFilter.getItems())
@@ -198,7 +198,7 @@ public class PageEntityLinkHelper {
             throws IllegalAccessException {
         return (field.getType() == Long.class && !field.get(container).equals(GenesisConstants.EMPTY_LONG)) ||
                 (field.getType() == String.class && field.get(container) != null) ||
-                (field.getType() == LocalDateTime.class && !field.get(container).equals(GenesisConstants.DATE_MAX)) ||
+                (field.getType() == LocalDateTime.class && !field.get(container).equals(GenesisConstants.EMPTY_DATE)) ||
                 (field.getType() == Boolean.class && field.get(container) != null);
     }
 }

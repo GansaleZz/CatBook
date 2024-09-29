@@ -14,5 +14,5 @@ public abstract class GenesisParametersContainer {
 
     private Long modifiedByID = GenesisConstants.EMPTY_LONG;
 
-    private Boolean active;
+    private Boolean active = Boolean.TRUE;
 }

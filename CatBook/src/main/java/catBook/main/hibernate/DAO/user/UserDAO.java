@@ -1,6 +1,6 @@
 package catBook.main.hibernate.DAO.user;
 
-import catBook.main.bean.User;
+import catBook.main.bean.user.User;
 import genesis.hibernate.DAO.BaseBeanDAO;
 import org.springframework.stereotype.Repository;
 
@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDAO extends BaseBeanDAO<User> {
 
+    User findByUserNameAndActive(String userName, boolean active);
 }

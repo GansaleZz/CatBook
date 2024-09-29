@@ -9,7 +9,7 @@ import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import java.time.LocalDateTime;
 
 /**
- * Parent ResponseDTO which contain common fields for all ResponseDTO's.
+ * Parent ResponseDTO which contains common fields for all ResponseDTOs.
  *
  * @author GansaleZz
  */
@@ -28,14 +28,4 @@ public abstract class GenesisResponseDTO extends RepresentationModel<GenesisResp
     private long modifiedByID;
 
     private boolean active;
-
-    protected abstract Class<? extends BaseReadService<? extends GenesisResponseDTO,
-            ? extends GenesisBean,
-            ? extends GenesisParametersContainer>> getServiceClass();
-
-    public void setID(long ID) {
-        this.ID = ID;
-
-        add(WebMvcLinkBuilder.linkTo(getServiceClass()).slash(ID).withSelfRel());
-    }
 }

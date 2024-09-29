@@ -8,7 +8,9 @@ import lombok.Setter;
 @Setter
 public class UserRoleMapRequestDTO extends GenesisRequestDTO {
 
-    private long userID;
+    private Long userRoleMapID;
+
+    private Long userID;
     
-    private long userRoleID;
+    private Long userRoleID;
 }
